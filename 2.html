@@ -1,0 +1,15 @@
+git push origin master 로 commit 한 내용을 remote 저장소에 push를 시도하자 다음과 같은 오류가 발생하였다
+
+error. failed to push some refs to '~~~'
+hint: Updates were rejected because the tip of your current branch is behind
+
+원인: github 레퍼지토리 생성시 readme.me 파일 생성여부란에 체크를 하면 생기는 오류; 원격저장소에서 readme.md를 추가하는 커밋이 로컬저장소의 커밋 로그에는 없기 때문이다.
+(push 명령은 로컬 저장소의 commit 목록과 원격 저장소의 commit 목록을 비교한다.)
+
+해결방안 :
+
+원격에 있는 소스를 로컬에 반영시키기 위해 git pull 을 해준다.
+
+되지 않을 경우
+
+임시방편으로 git push -u origin +master 명령어를 작성해준다. + 는 강제의 의미가 있다.
